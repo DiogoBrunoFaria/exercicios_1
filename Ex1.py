@@ -11,7 +11,7 @@ Após o utilizador ter inserido os 5 valores apresente:
 
 if __name__ == '__main__':  # isto é o ponto de partida
     print(f'Insira 5 dados')
-    listaVendas = [int(input()) for c in range(5)]#100, 50, 200, 300, 400 f'Insira {ndados -1} valores inteiros'
+    listaVendas = [int(input()) for c in range(5)]  # 100, 50, 200, 300, 400 f'Insira {ndados -1} valores inteiros'
     soma = listaVendas.__len__()
     listailhas = ['Terceira', 'Pico', 'Faial', 'São Jorge', 'Graciosa']
     media = sum(listaVendas) / soma
