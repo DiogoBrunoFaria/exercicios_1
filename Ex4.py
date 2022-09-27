@@ -9,15 +9,25 @@ Após o utilizador ter inserido os 5 valores apresente: feito
 - A média das vendas feito
 """
 if __name__ == '__main__':
-    print(f'Incira 5 valores')
-    ListadeVendas = [int(input()) for c in range(5)]
+    #print(f'Incira 5 valores')
+
+    ListadeVendas = []
     Tamanho = ListadeVendas.__len__()
     ListadeNomes = ['Terceira', 'Pico', 'Faial', 'São Jorge', 'Graciosa']
+
+    for ilha in ListadeNomes:
+        ListadeVendas.append((int(input(f'Insira as vendas para {ilha} '))))
+    print(f'vendas={ListadeVendas}')
 
     soma = sum(ListadeVendas)
     minimo = min(ListadeVendas)
     maximo = max(ListadeVendas)
-    media = soma / Tamanho
+    total = 0
+    for v in ListadeVendas:
+        total += v
+
+    media = total / len(ListadeVendas)
+
     print(f'Total da soma é {soma}')
     print(f'A venda mais alta é {maximo} e vem da ilha {ListadeNomes}')
     print(f'A venda mais baixa foi {minimo} e vem da ilha {ListadeNomes}')
