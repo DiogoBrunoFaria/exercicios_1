@@ -23,7 +23,7 @@ if __name__ == '__main__':
         if char in vogais:
             num_vogais += 1
         if char.isalpha() and char != '':
-            if char .islower():
+            if char.islower():
                 minusculas += 1
             else:
                 maiusculas += 1
