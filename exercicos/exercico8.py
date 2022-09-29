@@ -11,6 +11,7 @@ def gerador(ini, fim):
 
 
 if __name__ == '__main__':
+
     nums = [0, 0, 0, 0, 0]
     bonus = [0, 0]
     for x in range(len(nums)):
