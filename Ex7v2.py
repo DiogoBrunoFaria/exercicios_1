@@ -1,70 +1,77 @@
-"""
-Declare uma lista para guardar as vendas de gasolina e gas´´eo no grupo oriental
-Apresente:
-- Total das vendas
-- O total de vendas de gasolina
-- O total de vendas de gasóleo
-- O total de vendas para cada ilha
-Exemplo da estrutura de armazenamento das vendas:
-    vendas = [
-         TER PIC  FAI  GRA  SJR
-        [10, 20 , 30, 40 , 50], #Gasolina
-        [15, 25, 35, 45, 55]    #Gasoleo
-    ]
-    ou então:
-    vendas = [
-         Gasoleo
-          |  Gasolina
-        [10, 15], TER
-        [20, 25], PIC
-        [30, 35], FAI
-        [40, 45], GRA
-        [50, 55]  SJR
-    ]
-"""
+'''inserir valores para vendas
+total de vendas de gasolina
+total de venda de gasoleo
+total de vendas para cada ilha
+total de vendas de combustivel
+quais ilhas venderam mais
+quais ilhas venderam menos
+qual é ilha consumiu mais gasolina
+qual ilha consumiu mais gasoleo'''
+
+ilhas = ['Terceira', 'Pico', 'Faial', 'São Jorge', 'Graciosa', 'Flores', 'Corvo']
+tipos = ['Gasolina', 'Gasóleo']
+vendas = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0]
+]
+
+totais = [0, 0, 0, 0, 0, 0, 0]
+
 if __name__ == '__main__':
-    ilhas = ['Terceira', 'Graciosa', 'Pico', 'Faial', 'São Jorge']
-    tipos = ['Gasolina', 'Gasoleo']
-    vendas = [
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0]
-    ]
-if __name__ == '__main__':
-    # ober input
+    # Obter input
     for x in range(len(vendas)):
         for y in range(len(vendas[x])):
             while True:
                 try:
-                    vendas[x][y] = int(input(f'Insira vendas de {tipos[x]} para ilha {ilhas[y]}: '))
+                    vendas[x][y] = int(input(f'Insira vendas de {tipos[x]} para a ilha {ilhas[y]}: '))
                     break
                 except ValueError:
-                    print(f'Insira um Valor valido para vendas de {tipos[x]} na ilha {ilhas[y]}')
-        print(vendas)
+                    print(f'Insira um valor válido para vendas de {tipos[x]} na ilha {ilhas[y]}')
+    for venda in vendas:
+        print(venda)
 
     # Imprimir vendas por tipo
     for x in range(len(vendas)):
         total = 0
         for y in range(len(vendas[x])):
             total += vendas[x][y]
-        print(f'Total de vendas {tipos[x]} = {total}')
+        print(f'Total de vendas para {tipos[x]} = {total}')
 
     # Imprimir vendas por ilha
+    z = 0
+    for y in range(len(vendas[z])):
+        z += 1
+        total = 0
+        for x in range(len(vendas)):
+            total += vendas[x][y]
+        print(f'Total de vendas para {ilhas[y]} = {total}')
+        totais[y] = total
 
-    """
-    total_vendas = 0
-    for x in range(5):
-        total_linha = 0
-        for y in range(2):
-            print(f'vendas [{y}] [{x}] = {vendas[y][x]}')
-            total_vendas = total_vendas + vendas[y][x]
-            total_linha = total_vendas + vendas[y][x]
-        print(f'Total de linhas: {total_linha}')
-    print(f'Total de vendas: {total_vendas}')
+    # Imprimir o total de vendas de combustível
+    total_combustivel = 0
+    for y in range(len(vendas)):
+        for x in range(len(vendas)):
+            total_combustivel += vendas[x][y]
+    print(f'Total de vendas de combustivel nos Açores: {total_combustivel}')
 
-    total = 0
-    for y in range(5):
-        for x in range(2):
-            print(f'x={x} y={y}')
-            total = total + vendas[x][y]
-        print(total)
-        """
+    #Imprimir quais ilhas venderam mais
+    venda_maior = totais[0]
+    venda_menor = totais[0]
+    for y in range(1, len(totais)):
+        if totais[x] > venda_maior:
+            venda_maior = totais[x]
+        if totais[x] < venda_menor:
+            venda_menor = totais[x]
+
+    ilhas_maior = []
+    ilhas_menor = []
+
+    for x in range(len(totais)):
+        if totais[x] == venda_maior:
+            ilhas_maior.append(ilhas[x])
+        if totais[x] == venda_menor:
+            ilhas_menor.append(ilhas[x])
+
+    print(totais)
+    print(f'Ilhas maior: {ilhas_maior} = {venda_maior}')
+    print(f'Ilhas menor: {ilhas_menor} = {venda_menor}')
