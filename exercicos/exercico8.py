@@ -11,7 +11,6 @@ def gerador(ini, fim):
 
 
 if __name__ == '__main__':
-
     nums = [0, 0, 0, 0, 0]
     bonus = [0, 0]
     for x in range(len(nums)):
@@ -19,7 +18,8 @@ if __name__ == '__main__':
             onumero = gerador(1, 50)
             if onumero not in nums:
                 nums[x] = onumero
-                break
+            break
+
     print(f'Numeros = {nums}')
     for x in range(len(bonus)):
         while True:
@@ -28,3 +28,12 @@ if __name__ == '__main__':
                 bonus[x] = onumero
                 break
     print(f'bonus = {bonus}')
+
+    torquei = True
+    while torquei:
+        torquei = True
+        for x in range(4):
+            if nums[x] > nums[x + 1]:
+                troquei = True
+    print(troquei)
+
