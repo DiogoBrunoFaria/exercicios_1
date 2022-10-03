@@ -1,7 +1,8 @@
 """
     primeiro ex
     """
-if __name__ == '__main__':
+'''if __name__ == '__main__':'''
+"""
     x = int(input(f'Escreva o primeiro numero '))
     y = int(input(f'Escreva o segundo numero '))
     z = (x + 3 * y) * (x - y)
@@ -49,5 +50,29 @@ if __name__ == '__main__':
         print(f'O segundo numero é o meior')
     else:
         print(f' o terceiro é o meior')
+    
 
     '''exercicio 7'''
+    horas = int(input(f'Quantas horas trabalhou ? '))
+    if horas > 40:
+        horas_fina = horas * 2
+        print(horas_fina)
+        """
+'''exercicio 8'''
+
+
+def dia(valor):
+    dias = valor / (24 * 3600)
+    return dias
+
+
+if __name__ == '__main__':
+    while True:
+        try:
+            segundos = int(input('Quantas segundos? '))
+            if segundos < 0:
+                break
+            print(f'{segundos} segundos correspondem a {dia(segundos)} dias.')
+        except ValueError:
+            print('Digite um valor válido')
+    print(f'Adeus!')
