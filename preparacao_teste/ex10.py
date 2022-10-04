@@ -5,26 +5,24 @@ impares. Por exemplo,
 Escreva um inteiro
 ? 785554
 Resultado: 7555
+
 """
 
 
-def par(numero):
-    numero = numero % 2
-    if numero == 0:
-        return
+def impar(num):
+    num = int(num)
+    if num % 2 != 0:
+        return num
     else:
-        return False
+        return ''
 
 
 if __name__ == '__main__':
-    list_num = []
-    num = int(input('insira o pirmeiro numero'))
-    if par(num):
-        list_num.append(num)
-        print(list_num)
-        num =' '
-        for x in range(len(list_num)):
-            num += str(list_num[x])
 
-        print(f'Numero so com pares {num}')
-
+    num = int(input('Digite um número inteiro: '))
+    num = str(num)
+    num_impar = ''
+    for x in num:
+        # print(impar(x))
+        num_impar += str(impar(x))
+    print(f'Resultado: {num_impar}')
