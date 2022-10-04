@@ -57,7 +57,7 @@
     if horas > 40:
         horas_fina = horas * 2
         print(horas_fina)
-        """
+        
 '''exercicio 8'''
 
 
@@ -76,3 +76,24 @@ if __name__ == '__main__':
         except ValueError:
             print('Digite um valor válido')
     print(f'Adeus!')
+    """
+'''exercicio 9'''
+
+if __name__ == '__main__':
+    list_valor = []
+    while True:
+        try:
+
+            valor = int(input(f'insira um inteiro para terminar utiliza -1'))
+            if valor < 0:
+                break
+            list_valor.append(valor)
+            print(list_valor)
+
+        except ValueError:
+            print('Digite um valor válido')
+    valor = ''
+    for x in range(len(list_valor)):
+        valor += str(list_valor[x])
+
+    print(f'O numero é: {valor}')
