@@ -7,6 +7,9 @@ Escreva um número
 """
 
 if __name__ == '__main__':
-    valor = int(input(f'Insira um numeros'))
-    num = str(valor)
-    print(f'{valor}{num[:: -1]}')
+    num = str(input(f'Introduza um numero'))
+    nInteiros = ' '
+    for x in range(len(num)):
+        nInteiros = num[x] + nInteiros
+    nNum = num + nInteiros
+    print(nNum)
