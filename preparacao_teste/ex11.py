@@ -10,5 +10,5 @@ O número invertido é 6523367
 if __name__ == '__main__':
     num = int(input(f'Insrira um numero inteiro'))
     print(num)
-    #num = str(num)
+    num = str(num)
     print(f'O Numero invertido é {num[:: -1]}')
